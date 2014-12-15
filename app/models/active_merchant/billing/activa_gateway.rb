@@ -171,6 +171,7 @@ module ActiveMerchant #:nodoc:
       def url(action)
         endpoint = "PaymentInitHTTPServlet"
         # endpoint = 'TranPortalHTTPServlet'
+        p (test? ? test_url : live_url) + endpoint
         (test? ? test_url : live_url) + endpoint
       end
 
