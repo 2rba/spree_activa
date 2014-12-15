@@ -6,7 +6,7 @@ module ActiveMerchant #:nodoc:
       self.homepage_url = "http://www.activa.si"
 
       self.test_url = "https://test4.constriv.com/cg301/servlet/"
-      self.live_url = "https://test4.constriv.com/cg301/servlet/"
+      self.live_url = "https://www.constriv.com/cg/servlet/"
 
       self.default_currency = "EUR"
       self.money_format = :dollars
@@ -110,6 +110,7 @@ module ActiveMerchant #:nodoc:
       end
 
       def parse(body)
+        p body
         a = body.match(/(\d+)\:(.+)/)
         response = {PaymentID: a[1], PaymentURL: a[2]}
         response
