@@ -137,7 +137,7 @@ module ActiveMerchant #:nodoc:
         # # post[:cvv2] = escape(payment_method.verification_value)
         # post[:expyear] = '2015'
         # post[:expmonth] = '01'
-
+        p post_data(post)
         raw = parse(ssl_post(url(action), post_data(post)))
         return "#{raw[:PaymentURL]}?PaymentID=#{raw[:PaymentID]}"
 
